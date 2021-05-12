@@ -18,7 +18,7 @@ const initialState = {
     - passed into dispatch({type:'some_action', payload:'some data'})
 */
 
-export const GlobalContext = createContext<InitialStateType>(initialState);
+// export const GlobalContext = createContext<InitialStateType>(initialState);
 
 // Create Global provider which will feed state to our components
 

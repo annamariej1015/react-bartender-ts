@@ -7,15 +7,16 @@ import Navbar from '../components/Navbar';
 
 const AppRoutes = () => {
     return (
-    <div>
+        <div>
         <Navbar />
         <div className='container-fluid'>
-        <Switch>
-            <Route path='/' exact component={HomePage} />
-            <Route path='/' component={SingleDrinkPage}/>
-        </Switch>
+            <Switch>
+                <Route path='/' exact component={HomePage} />
+                <Route path='/cocktails/:cocktailId' component={SingleDrinkPage}/>
+            </Switch>
         </div>
     </div>
+    
     );
 };
 
