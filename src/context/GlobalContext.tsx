@@ -3,7 +3,7 @@ import instance from '../api/apiConfig';
 
 const initialState = {
     drinks:[],
-    drink: [],
+    drink: undefined,
     is_loading: false,
     getDrinks: () => {},
     getSingleDrink: () => {},
