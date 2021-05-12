@@ -2,7 +2,7 @@ import React, { createContext, useReducer } from 'react';
 import instance from '../api/apiConfig';
 
 const initialState = {
-    Drinks:[],
+    drinks: [],
     drink: [],
     is_loading: false,
     getDrinks: () => {},
