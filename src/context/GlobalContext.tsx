@@ -1,9 +1,9 @@
 import React, { createContext, useState, useReducer } from 'react';
 import instance from '../api/apiConfig';
 
-const initialState = {
+//const initialState = {
 
-};
+//};
 
 // Create our global reducer
 // reducer is a function that allows us to handle and update state
@@ -18,7 +18,7 @@ const initialState = {
     - passed into dispatch({type:'some_action', payload:'some data'})
 */
 
-// export const GlobalContext = createContext<InitialStateType>(initialState);
+//export const GlobalContext = createContext<InitialStateType>(initialState);
 
 // Create Global provider which will feed state to our components
 
