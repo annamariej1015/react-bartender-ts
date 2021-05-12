@@ -52,7 +52,7 @@
     */
 
     type Drink = {
-        idDrink: string;
+        idDrink: number;
         strDrink: string;
         strDrinkAlternate: null;
         strTags: null;
@@ -104,3 +104,11 @@
         strCreativeCommonsConfirmed: string;
         dateModified: string;
     }
+
+    type InitialStateType ={
+        drinks: Drink[];
+        drink: Drink | undefined;
+        is_loading: boolean;
+        getDrinks: () => void;
+        getSingleDrink: (drinkId: number) => void,
+    };
