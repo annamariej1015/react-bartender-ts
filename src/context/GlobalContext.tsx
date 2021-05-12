@@ -12,6 +12,7 @@ const initialState = {
 const appReducer = (state: any, action: any) => {
     switch (action.type) {
         case 'GET_DRINKS':
+            console.log('Inside the reducer:',action.payload);
             return {...state, drinks: action.payload, is_loading: false };
         case 'GET_SINGLE_DRINK':
             return{...state, drink: action.payload, is_loading: false };
@@ -31,8 +32,9 @@ export const GlobalProvider: React.FC = ({ children }) => {
     const getDrinks = async () => {
         dispatch({ type: 'SET_LOADING', payload: true});
         try{
-            let { data } = await instance.get('/drink');
-            dispatch ({ type: 'GET_DRINKS', payload: data});
+            let { data } = await instance.get('/api/json/v1/1/search.php?s=');
+            console.log('this is:',data);
+            dispatch ({ type: 'GET_DRINKS', payload: data.drinks});
         } catch (e) {
             console.log(e);
         }
