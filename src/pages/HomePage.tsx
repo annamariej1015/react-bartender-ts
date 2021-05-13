@@ -1,5 +1,7 @@
 import { useEffect, useContext }  from 'react';
+import { Link } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalContext';
+import '../App.css';
 
 const HomePage = () => {
     const { drinks,getDrinks} = useContext(GlobalContext);
@@ -11,28 +13,40 @@ const HomePage = () => {
      
     return(
         <div id='home'>
-            <div className='row text-center'>
-            <div className='col'>
-                <h2>Home Page!</h2>
-            </div>
-            </div>
+           
         <div className='row'>
             {drinks.map((drink, i) => {
             return (
-                <div className='card h-100 product-card-hover d-flex flex-column justify-content-between'> 
-                      <div className='card-body'>
-          <h5 className='card-title'>
-           {drink.idDrink}
-          </h5>
-          <div className='d-flex justify-content-between align-items-center'>
-            <strong>{drink.strCategory}</strong>
-            <h2>{drink.strImageSource}</h2>
-           
-          </div>
-        </div>
-        </div>
-           
+                <div className=' card col-sm-12 col-md-3 mb-3' key={i}>
+                    {/* Img */}
+                <div className='sh-card-img'>
+                    <div
+                    className='sh-bg-img'
+                    style={{ backgroundImage: `url(${drink.strDrinkThumb})` }}></div>
+                    </div>
+                
+                 {/* Details */}
+                    <div className='card-body'>
+                        <h4 className='card-title'>
+                        {drink.strDrink}
+                        </h4>
+                        <h5 className='card-title'> {drink.strGlass}</h5>
+                        <p><strong>Instructions:</strong>{drink.strInstructions}</p>
+                    
+    
+                        <div className='my-2 d-flex justify-content-center'>
+                            <Link to={`/cocktails/:cocktailId`} className='card-link'>
+                            View Details
+                            </Link>
+                            
+                        </div>  
+                 </div>  
+               </div>
+      
+        // </div>
+        // </div>
           );
+          
         })}
         </div>
      
